@@ -1,0 +1,15 @@
+# Paper-protocol replication (arXiv 2610.22138): 10 benign agents, k in {0,1,3},
+# 3 rounds, 30 factual questions. ~ (10 + k) x 3 x 30 x 3 conditions ~= 3,000+ calls:
+# run over 2-3 days on the Gemini free tier, or split across providers.
+provider: gemini
+provider_kwargs:
+  model: gemini-2.0-flash
+n_benign: 10
+n_rounds: 3
+conditions: [0, 1, 3]
+questions: ../data/factual_qa.jsonl
+max_questions: 30
+seed: 42
+sleep_s: 4.0
+out_dir: results/paper_replication
+report_title: "beliefcollapse paper-protocol replication (gemini-2.0-flash)"

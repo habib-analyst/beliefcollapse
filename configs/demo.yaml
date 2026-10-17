@@ -1,0 +1,11 @@
+# 30-second demo: mock provider, tiny scale, instant.
+provider: mock
+n_benign: 4
+n_rounds: 2
+conditions: [0, 1]
+questions: ../data/factual_qa.jsonl
+max_questions: 4
+seed: 0
+sleep_s: 0
+out_dir: results/demo
+report_title: "beliefcollapse demo (mock provider)"

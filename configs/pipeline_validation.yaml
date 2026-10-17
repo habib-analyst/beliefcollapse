@@ -1,0 +1,14 @@
+# PIPELINE VALIDATION ONLY (not a phenomenon measurement).
+# Uses phenomenon_mock, which simulates the paper's reported rates
+# (k=0 -> ~0.6%, k=1 -> ~44.8%, k=3 -> ~60.5%) to verify the harness
+# measures contamination correctly end to end.
+provider: phenomenon_mock
+n_benign: 10
+n_rounds: 3
+conditions: [0, 1, 3]
+questions: ../data/factual_qa.jsonl
+max_questions: 30
+seed: 42
+sleep_s: 0
+out_dir: results/pipeline_validation
+report_title: "beliefcollapse PIPELINE VALIDATION (phenomenon_mock: simulated, NOT measured)"

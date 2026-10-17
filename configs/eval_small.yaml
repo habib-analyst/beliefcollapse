@@ -1,0 +1,15 @@
+# Small-scale honest eval on a free-tier model.
+# Set GEMINI_API_KEY first: https://aistudio.google.com/apikey (free tier ~1,500 req/day)
+# ~ (4 agents + k adversaries) x 2 rounds x 10 questions x 2 conditions ~= 200-300 calls.
+provider: gemini
+provider_kwargs:
+  model: gemini-2.0-flash
+n_benign: 4
+n_rounds: 2
+conditions: [0, 1]
+questions: ../data/factual_qa.jsonl
+max_questions: 10
+seed: 42
+sleep_s: 4.0
+out_dir: results/eval_small
+report_title: "beliefcollapse small-scale eval (gemini-2.0-flash)"
